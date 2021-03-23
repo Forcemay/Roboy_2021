@@ -1,0 +1,10 @@
+bon en gros tu import lidar
+ensuite tu instances lydar=LYDAR(a,b,c)
+a c'est le nombre de tour que tu veux faire avant d'avoir tes données
+b c'est la distance que tu veux observer (sachant que plus tu iras loin plus les clusters seront petit je les ai fixés à 5 points en dessous ils sont delete donc si tu augmentes la distance augmente aussi le nombre de tour
+c c'est pour l'affichage visuel true ou false
+
+ensuite tu lydar.start() pour démarrer le thread
+enfin tu lydar.get_data(x,y,alpha) pour avoir la liste des points avec x,y la position de ton robot et alpha l'angle de la matrice de changement de base entre l'angle de ton robot et le terrain
+
+ça te return une liste de point avec point.x point.y point.label (les éléments d'un même cluster ont le même label !!! ç'est pas progressif ça peut faire 1,5,8 ç'est à cause des filtres)
